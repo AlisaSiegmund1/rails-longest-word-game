@@ -1,0 +1,15 @@
+<h1>New Game</h1>
+
+<ul>
+<%@letters.each do |letter| %>
+  <li><%= letter %></li>
+<% end %>
+</ol>
+
+<p>What is the longes word you can find?</p>
+
+<form action="/score" method="post">
+   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input id="field" type="text" name="word">
+  <input id="btn" type="submit" value="Play">
+</form>
